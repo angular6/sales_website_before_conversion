@@ -1,0 +1,52 @@
+<iframe ng-if="special__create_element" width=100% height=11000px scrolling="no" src="dublin/kiln-dried-logs/#!#hayley" >
+    <p>Your browser does not support iframes.</p>
+</iframe>
+<div class="row" ng-if="normal__create_element">
+    <div class="col-sm-5">
+        <img class="image" ng-src="../images/thumbnails_200/200_{{NameOfImageFileForThisProduct}}.jpg">
+    </div>
+    <div class="col-sm-6">
+        <div style="min-height: 200px">
+            <div style="font-size: x-large; padding-bottom: 20px">
+                <strong>{{product_object.name}}</strong>
+                <br><a href="{{$root.PRE_LINK}}subcategory/{{product_object.sc}}" style="font-size: small;">{{theNameOfTheSubcategoryOfThisProduct}}</a>
+            </div>
+            <div ng-bind-html=hayley></div>
+            <br>
+            <div ng-bind-html=hayley2></div>
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><span class="oi oi-envelope-closed"></span>&nbsp; Send me a Quote</button>
+            <br>
+            <br>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><!--Quote--></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                For a Quote for <strong> {{product_object.name}} </strong>
+                <br>
+                <br>
+                <div class="lg-up-show">
+                    <span class="ff1 halflings halflings-phone-alt">&#xe183;</span> &nbsp; {{callNow}}
+                    <br>
+                </div>
+                <a style="width: 100%" type="button" class="btn btn-primary lg-up-hide" href="tel:{{telNumber}}">Click Here</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="margin-bottom: 100px">
+</div>

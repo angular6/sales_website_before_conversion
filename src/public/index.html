@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app="app" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular App</title>
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDHnA1_yVXiOX2T7i8vwGgANACPGXNF_Tk",
+    authDomain: "nortons-51341.firebaseapp.com",
+    databaseURL: "https://nortons-51341.firebaseio.com",
+    projectId: "nortons-51341",
+    storageBucket: "nortons-51341.appspot.com",
+    messagingSenderId: "44222944076"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+  <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src='https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js'></script>
+
+
+  <base href="/">
+</head>
+<body>
+<div class="container">
+  <app-root></app-root>
+ </div>
+</body>
+</html>

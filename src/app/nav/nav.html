@@ -1,0 +1,120 @@
+<div style="background-color: #232F3E;">
+    <div class="custom_searchbox lg-up-hide" style="line-height: 30px; padding-top: 10px; padding-bottom: 10px">
+        <div style="display: flex; line-height: initial;">
+            <div style="padding: .1rem 1rem; background-color: #A6CC54;">
+                <span>
+                    <img src="images/app/search.png">
+                </span>
+            </div>
+            <div style="flex: auto; background-color: white;">
+                <form>
+                    <input autofocus="1" ng-submit=wp() ng-keyup="$event.keyCode == 13 && wp()" 
+                    ng-model="$root.search" ng-change="changeLocationPath()" style="height: 100%; width: 100%; padding: 2px 6px;" type=text placeholder="Search">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="lg-up-show">
+                <a href="../"><img src="images/app/logo_.png" class="logo" style="width: 200px" ></a>
+                <br><span style="color: white; padding-left: 16px; position: relative; top: -6px;"> {{navText1}} </span>
+            </div>
+            <div class="lg-up-hide">
+                <div class="row">
+                    <div class="col-9" style="padding-left: 0">
+                        <a href="../"><img src="images/app/logo_.png" style="width: 200px" ></a>
+                        <br><span style="color: white; padding-left: 7px; position: relative; top: -6px;"> {{navText1}} </span>
+                    </div>
+                    <div class="col-3 text-right">
+                        <div style="padding-top: 10px; padding-right: 13px; display: inline-block;">
+                            <a href="/client "> <img src="images/app/myaccount.png" style="width: 35px; opacity: 0.3;"></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <div class="custom_searchbox lg-up-show" style="height: 29px; line-height: 30px; margin-top: 24px; margin-bottom: 20px">
+                <div style="display: flex; line-height: initial;">
+                    <div style="padding: .1rem 1rem; background-color: #A6CC54;">
+                        <span><img src="images/app/search.png"></span>
+                    </div>
+                    <div style="flex: auto; background-color: white;">
+                        <form>
+                            <input autofocus="1" ng-submit=wp() ng-keyup="$event.keyCode == 13 && wp()" ng-change="changeLocationPath()" ng-model="$root.search" style="height: 100%; width: 100%; padding: 2px 6px;" type=text placeholder="Search">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--         <div class="col-lg-2 text-right">
+            <div class="lg-up-show" style="padding: 10px 20px 10px 17px;"> <a href="/client "> Login </a></div>
+        </div> -->
+    </div>
+</div>
+
+
+<style type="text/css">
+.navbar-light .navbar-nav .nav-link { color: white; }
+nav .nav-link:hover { color: initial; text-decoration: underline; }
+nav .nav-link:active {}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover { color: white; }
+</style>
+
+<!-- START second nav bar -->
+    <div ng-hide=page_is_search() class="row" style="background-color: #232F3E!important; border-bottom: 1px solid white;border-top: 1px solid white;">
+
+    <div class="col-lg-3">
+        <div class="navbar-brand lg-up-show" style="color: white!important;padding-left: 15px;padding-top: 10px;">{{navText2}}</div>
+    </div>
+    <div class="col-lg-7">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-image: inherit; background-color: #232F3E!important;border: 0;padding-left: 10px;">
+            <span class="navbar-brand lg-up-hide" style="color: white!important">{{navText2}}</span>
+            <style type="text/css">
+            .navbar-light .navbar-toggler-icon {
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, .5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+            }
+
+            .navbar-light .navbar-toggler {
+                border-color: rgba(255, 255, 255, .1);
+            }
+            </style>
+            <button style="outline-color: #6AA1B6;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li ng-repeat="x in categories" class="nav-item">
+                        <a class="nav-link" href="{{$root.PRE_LINK}}category/{{x.id}}" " ng-class="{aactive: light_up_li_repeated_category(x.id) }"> {{x.name}}</a>
+              
+
+
+        </li>
+     </ul>
+</div>
+</nav>
+</div>
+<div class="col-lg-2 ">
+</div>
+</div>
+<!-- second nav bar -->
+
+
+
+
+<div class="lg-up-show ">
+    <nav class=breadcrumb ng-show=show_breadcrumb_2 style="margin-bottom: 0px!important; border-radius: 0; ">
+        <a ng-repeat="x in breadcrumb_array | filter:{active: 0}:true " href="{{$root.PRE_LINK}}{{x.link}}" class="breadcrumb-item ">{{x.obj.name}}</a>
+        <span ng-repeat="x in breadcrumb_array | filter:{active: 1}:true " class="breadcrumb-item active ">{{x.obj.name}}</span>
+    </nav>
+</div>
+
+<div class="lg-up-hide ">
+    <nav class=breadcrumb ng-show=show_breadcrumb style="margin-bottom: 0px!important; border-radius: 0; ">
+        <a ng-repeat="x in breadcrumb_array | filter:{active: 0}:true " href="{{$root.PRE_LINK}}{{x.link}}" class="breadcrumb-item "> {{x.obj.name}} &nbsp;&nbsp;&nbsp;&nbsp;</a>
+    </nav>
+    <nav class="breadcrumb " ng-show=show_breadcrumb_2 style="background-color: white!important; border-radius: 0; ">
+        <span ng-repeat="x in breadcrumb_array | filter:{active: 1}:true " class="breadcrumb-item active ">{{x.obj.name}}</span>
+    </nav>
+</div>
+<div ng-hide=hide_margin_under_breadcrumb style="margin-bottom: 30px "></div>

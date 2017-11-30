@@ -1,0 +1,26 @@
+//@import "custom";
+@import "~bootstrap/scss/bootstrap";
+
+html { overflow-y: scroll !important;}
+body {} @media (min-width: 576px) { body {padding-top: 20px} } 
+@font-face { font-family: hayley; src: url(gicons.woff); } .ff1 { font-family: hayley;}
+
+.lg-up-hide { display: block!important; } @media (min-width: 992px) { .lg-up-hide {display: none!important;}}
+.lg-up-show { display: none!important;  } @media (min-width: 992px) { .lg-up-show {display: block!important;}}
+
+.show {display: block!important;}
+.hide {display: none!important; }
+
+.row { margin-left: 0!important; margin-right: 0!important; }
+.modal-open { padding-right: 0 !important; }
+.container {padding-left: 0px!important;padding-right: 0px!important;}
+.custom_searchbox { padding-left: 20px; padding-right: 20px;}  @media (min-width: 768px) {.custom_searchbox {padding-left: 30px;}}
+
+.logo {width: 150px; padding: 10px 0 0 12px;}
+.image { display: block; border: solid 1px black; margin-right: auto; margin-left: auto;}
+
+.aactive { color: #A7CD54!important;}
+
+
+
+

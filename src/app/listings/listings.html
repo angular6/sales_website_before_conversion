@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row">
+            <div style="padding-bottom: 40px;" class="col-sm-3" ng-repeat="result in results">
+                <a href="{{link}}{{result.id}}">
+
+<span ng-switch="temp">
+<img ng-switch-when="1" style="border: 1px solid black;" ng-src="images/app/100_{{category_id}}.jpg";">
+<img ng-switch-default style="border: 1px solid black;" ng-src="{{image}}{{result.id | ta }}.jpg">
+</span>
+
+                <br>
+                {{result.name}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>

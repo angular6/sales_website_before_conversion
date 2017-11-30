@@ -1,0 +1,30 @@
+<div style="height: 10px">
+</div>
+<div ng-switch="(products_array | filter:$root.search).length">
+    <div ng-switch-when=0> Sorry, no search results for {{$root.search}}</div>
+    <div ng-switch-default> {{(products_array | filter:$root.search).length}} search result(s)</div>
+</div>
+<br>
+<div class="row">
+    <div class="col-lg-3" ng-repeat="x in products_array | filter: {name:$root.search}">
+       
+ <span class="lg-up-hide">
+<a href="{{$root.PRE_LINK}}product/{{x.id}}">    
+<div class="row">
+<div class="col-3"><img style="border: 1px solid black; width: 100%" ng-src="images/thumbnails_100/100_{{x.id | ta }}.jpg"></div>
+<div class="col-9">{{x.name}}</div>
+</div>  
+</a>
+<div style="height: 10px;"></div> 
+</span>
+
+<span class="lg-up-show">
+<a href="{{$root.PRE_LINK}}product/{{x.id}}"><img style="border: 1px solid black;" ng-src="images/thumbnails_100/100_{{x.id | ta }}.jpg"><br>{{x.name}}</a>
+<div style="padding-bottom: 40px"></div>
+</span>
+
+
+    </div>
+
+    
+</div>

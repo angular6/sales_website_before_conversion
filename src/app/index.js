@@ -1,0 +1,31 @@
+import 'bootstrap'
+import '../style/styles.scss'
+
+let angular =       require("angular")
+let ngRoute =       require("angular-route")
+let angularfire =   require("angularfire")
+let ngSanitize =    require("angular-Sanitize")
+
+angular.module('app', ["firebase", ngRoute, ngSanitize])
+
+    .factory  ('shop',          function() { return require("./shop.factory")})
+    .factory  ('breadcrumb',    function() { return require("./shop.factory").breadcrumb() })
+    .factory  ('products',      function() { return require("./shop.factory").products })
+    .factory  ('categories',    function() { return require("./shop.factory").categories })
+    .factory  ('subcategories', function() { return require("./shop.factory").subcategories })
+    .factory  ('padwithzeroes', function() { return require("./shop.factory").padwithzeroes })
+    .filter   ('ta',            function(padwithzeroes) { return function(x) { return padwithzeroes(x, 6) }; })
+    .component('appRoot',       require("./app-root"))
+    .component('appNav',        require("./nav/nav") )
+    .component('appFooter',     require("./footer/footer"))
+    .component('appHome',       require("./home/home"))
+    .component('appListings',   require("./listings/listings")) 
+    .component('appProduct',    require("./product/product"))
+    .component('appSearch',     require("./search/search"))
+    .component('searchBoxC',    require("./shop.factory").searchBoxC )
+    .config(                    require("./config").config)
+    .run(                       function($rootScope) { console.log("loaded................"); })
+    .run(                       function($rootScope) { $rootScope.PRE_LINK = "#!/dublin/"; })
+    .run(                       function($rootScope) { $rootScope.categoryFinder = [null, null]; })
+    .run(                       function($rootScope) { $rootScope.search = ""; })
+    .run(                       function($rootScope, $route) {$rootScope.$on('$routeChangeSuccess', () => { document.title = $route.current.title })  })
