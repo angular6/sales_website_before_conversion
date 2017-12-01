@@ -1,9 +1,6 @@
 module.exports = {
 
-    controller: /* @ngInject */
-
-
-        function(shop, products, breadcrumb, subcategories, categories, $scope, $rootScope, $location, $route) {
+    controller: /* @ngInject */ function(shop, products, breadcrumb, subcategories, categories, $scope, $rootScope, $location, $route) {
 
             $scope.navText1 = shop.navText1
             $scope.navText2 = shop.navText2
@@ -58,21 +55,13 @@ module.exports = {
                     }
 
                     $scope.light_up_li_repeated_category = li_repeated_category => { if (li_repeated_category == category_id) return 1 }
-
                 }
 
             })
 
             $scope.categories = categories
-
             $scope.page_is_search = () => { if ($location.path == "/dublin/search") return 1; return 0 }
-
-
             $scope.changeLocationPath = () => { $location.path('/dublin/search') }
-            $scope.changeLocationPath2 = () => { $location.path('/') } //???????????????????????????????????????????????
-
-
-
         },
 
 

@@ -1,15 +1,3 @@
-<!-- 
-
- <pre>$location.path() = {{$location.path()}}</pre>
-  <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
-  <pre>$route.current.params = {{$route.current.params}}</pre>
-  <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
-  <pre>$routeParams = {{$routeParams}}</pre>
- -->
-
-
-
-
 <div style="background-color: #232F3E;">
     <div class="custom_searchbox lg-up-hide" style="line-height: 30px; padding-top: 10px; padding-bottom: 10px">
         <div style="display: flex; line-height: initial;">
@@ -20,8 +8,7 @@
             </div>
             <div style="flex: auto; background-color: white;">
                 <form>
-                    <input autofocus="1" ng-submit=wp() ng-keyup="$event.keyCode == 13 && wp()" 
-                    ng-model="$root.search" ng-change="changeLocationPath()" style="height: 100%; width: 100%; padding: 2px 6px;" type=text placeholder="Search">
+                    <input autofocus="1" ng-submit=wp() ng-keyup="$event.keyCode == 13 && wp()" ng-model="$root.search" ng-change="changeLocationPath()" style="height: 100%; width: 100%; padding: 2px 6px;" type=text placeholder="Search">
                 </form>
             </div>
         </div>
@@ -29,42 +16,12 @@
     <div class="row">
         <div class="col-lg-3">
             <div class="lg-up-show">
-<!--                 <a ng-click="changeLocationPath2()"><img src="images/app/logo_.png" class="logo" style="width: 200px; cursor: pointer;" ></a>
- -->                
-
- <a href="{{$root.PRE_LINK}}"><img src="images/app/logo_.png" class="logo" style="width: 200px; cursor: pointer;" ></a>
+                <a href="{{$root.PRE_LINK}}"><img src="images/app/logo_.png" class="logo" style="width: 200px; cursor: pointer;" ></a>
                 <br><span style="color: white; padding-left: 16px; position: relative; top: -6px;"> {{navText1}} </span>
             </div>
             <div class="lg-up-hide">
                 <div class="row">
-                    <div class="col-9" style="padding-left: 0">
-
-
-
-<!--                 <a ng-click="changeLocationPath2()"><img src="images/app/logo_.png" class="logo" style="width: 200px; cursor: pointer;" ></a>
- -->
-
-
-
-
-
-
-
-
-                        <a href="{{$root.PRE_LINK}}"><img src="images/app/logo_.png" style="width: 200px" ></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    <div class="col-9" style="padding-left: 0"><a href="{{$root.PRE_LINK}}"><img src="images/app/logo_.png" style="width: 200px" ></a>
                         <br><span style="color: white; padding-left: 7px; position: relative; top: -6px;"> {{navText1}} </span>
                     </div>
                     <div class="col-3 text-right">
@@ -88,23 +45,30 @@
                 </div>
             </div>
         </div>
-<!--         <div class="col-lg-2 text-right">
+        <!--         <div class="col-lg-2 text-right">
             <div class="lg-up-show" style="padding: 10px 20px 10px 17px;"> <a href="/client "> Login </a></div>
         </div> -->
     </div>
 </div>
-
-
 <style type="text/css">
-.navbar-light .navbar-nav .nav-link { color: white; }
-nav .nav-link:hover { color: initial; text-decoration: underline; }
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
+nav .nav-link:hover {
+    color: initial;
+    text-decoration: underline;
+}
+
 nav .nav-link:active {}
-.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover { color: white; }
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+    color: white;
+}
 </style>
-
 <!-- START second nav bar -->
-    <div ng-hide=page_is_search() class="row" style="background-color: #232F3E!important; border-bottom: 1px solid white;border-top: 1px solid white;">
-
+<div ng-hide=page_is_search() class="row" style="background-color: #232F3E!important; border-bottom: 1px solid white;border-top: 1px solid white;">
     <div class="col-lg-3">
         <div class="navbar-brand lg-up-show" style="color: white!important;padding-left: 15px;padding-top: 10px;">{{navText2}}</div>
     </div>
@@ -126,7 +90,7 @@ nav .nav-link:active {}
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li ng-repeat="x in categories" class="nav-item">
-                        <a class="nav-link" href="{{$root.PRE_LINK}}category/{{x.id}}" " ng-class="{aactive: light_up_li_repeated_category(x.id) }"> {{x.name}}</a>
+                        <a class="nav-link" href="{{$root.PRE_LINK}}category/{{x.id}}" " ng-class="{aactive: light_up_li_repeated_category(x.id) } "> {{x.name}}</a>
               
 
 
@@ -145,14 +109,14 @@ nav .nav-link:active {}
 
 <div class="lg-up-show ">
     <nav class=breadcrumb ng-show=show_breadcrumb_2 style="margin-bottom: 0px!important; border-radius: 0; ">
-        <a ng-repeat="x in breadcrumb_array | filter:{active: 0}:true " href="{{$root.PRE_LINK}}{{x.link}}" class="breadcrumb-item ">{{x.obj.name}}</a>
+        <a ng-repeat="x in breadcrumb_array | filter:{active: 0}:true " href="{{$root.PRE_LINK}}{{x.link}} " class="breadcrumb-item ">{{x.obj.name}}</a>
         <span ng-repeat="x in breadcrumb_array | filter:{active: 1}:true " class="breadcrumb-item active ">{{x.obj.name}}</span>
     </nav>
 </div>
 
 <div class="lg-up-hide ">
     <nav class=breadcrumb ng-show=show_breadcrumb style="margin-bottom: 0px!important; border-radius: 0; ">
-        <a ng-repeat="x in breadcrumb_array | filter:{active: 0}:true " href="{{$root.PRE_LINK}}{{x.link}}" class="breadcrumb-item "> {{x.obj.name}} &nbsp;&nbsp;&nbsp;&nbsp;</a>
+        <a ng-repeat="x in breadcrumb_array | filter:{active: 0}:true " href="{{$root.PRE_LINK}}{{x.link}} " class="breadcrumb-item "> {{x.obj.name}} &nbsp;&nbsp;&nbsp;&nbsp;</a>
     </nav>
     <nav class="breadcrumb " ng-show=show_breadcrumb_2 style="background-color: white!important; border-radius: 0; ">
         <span ng-repeat="x in breadcrumb_array | filter:{active: 1}:true " class="breadcrumb-item active ">{{x.obj.name}}</span>
